@@ -5,10 +5,14 @@ const app = express();
 const cors = require("cors");
 
 //import routes
+const userRoutes = require("./routes/user");
 
 //middleware
 app.use(bodyParser.json());
 app.use(cors());
+
+//routes
+app.use("/api/user", userRoutes);
 
 const PORT = 8000;
 const DB_URL =
